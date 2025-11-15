@@ -4,8 +4,11 @@ const Navbar = () => {
   const currentPath = useLocation().pathname;
 
   return (
-    <nav className="flex flex-row justify-center items-center p-3">
-      <ul className="flex flex-row justify-center items-center gap-8">
+    <nav className="sticky top-0 flex flex-row justify-center items-center w-full p-3">
+      <ul className="relative flex flex-row justify-center items-center w-full gap-8">
+        <h1 className="max-sm:hidden absolute top-0 left-8 text-2xl font-bold text-[#ddd]">
+          MovieFinder
+        </h1>
         <NavLink to={"/"} end>
           <div className="group relative m-0 p-0 w-fit h-fit">
             <li className="text-xl font-bold text-[#ccc] group-hover:text-white duration-100">

@@ -1,15 +1,18 @@
+import { useParams } from "react-router";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 
-const Search = () => {
+const SearchResult = () => {
+  const searchQuery = useParams<{ query: string }>().query || "";
+
   return (
     <main>
       <Navbar />
       <section className="flex flex-col justify-center items-center w-full mt-8">
-        <SearchBar />
+        <SearchBar initialSearch={searchQuery} />
       </section>
     </main>
   );
 };
 
-export default Search;
+export default SearchResult;
