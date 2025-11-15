@@ -54,10 +54,18 @@ const Movie = () => {
       <section className="flex flex-col md:flex-row justify-center items-center w-full mt-16 gap-2 md:gap-16">
         {!loading && movieDetails && (
           <>
-            <div
-              style={{ backgroundImage: `url(${movieDetails.Poster})` }}
-              className="w-72 sm:w-96 h-96 sm:h-128 bg-cover bg-center brightness-50 lg:group-hover:brightness-50 lg:brightness-100 duration-100 rounded-lg"
-            />
+            {movieDetails.Poster === "N/A" ? (
+              <div className="w-72 sm:w-96 h-96 sm:h-128 bg-[#555] flex justify-center items-center rounded-lg">
+                <p className="text-white text-center px-4">
+                  No Image Available
+                </p>
+              </div>
+            ) : (
+              <div
+                style={{ backgroundImage: `url(${movieDetails.Poster})` }}
+                className="w-72 sm:w-96 h-96 sm:h-128 bg-cover bg-center brightness-50 lg:group-hover:brightness-50 lg:brightness-100 duration-100 rounded-lg"
+              />
+            )}
             <div className="md:w-lg max-md:p-15">
               <h1 className="text-4xl font-bold text-white">
                 {movieDetails.Title} - {movieDetails.Year}
