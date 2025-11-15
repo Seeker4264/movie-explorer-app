@@ -4,7 +4,7 @@ const Navbar = () => {
   const currentPath = useLocation().pathname;
 
   return (
-    <nav className="sticky top-0 flex flex-row justify-center items-center w-full p-3">
+    <nav className="top-0 flex flex-row justify-center items-center w-full p-3">
       <ul className="relative flex flex-row justify-center items-center w-full gap-8">
         <h1 className="max-sm:hidden absolute top-0 left-8 text-2xl font-bold text-[#ddd]">
           MovieFinder
